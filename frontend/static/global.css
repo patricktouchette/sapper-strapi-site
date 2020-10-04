@@ -1,0 +1,113 @@
+/* FONTS */
+@import url("https://fonts.googleapis.com/css?family=Poppins:600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
+
+:root {
+  --primary: hsl(322, 100%, 66%); /* PINK */
+  --pale: hsl(193, 100%, 96%);
+  --dark: hsl(192, 100%, 9%);
+  --gray: hsl(208, 11%, 55%);
+
+  --box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
+
+  --heading-font: "Poppins", sans-serif;
+  --heading-font-weight: 600;
+  --body-font: "Open Sans", sans-serif;
+  --body-font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* typography */
+body {
+  color: var(--dark);
+  font-family: var(--body-font);
+  font-weight: var(--body-font-weight);
+  font-size: 18px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--heading-font);
+  font-weight: var(--heading-font-weight);
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+h2 {
+  margin-bottom: 1.4rem;
+  font-size: 2.4rem;
+}
+
+h3 {
+  margin-bottom: 1.3rem;
+  font-size: 2rem;
+}
+
+p {
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+/* buttons */
+.btn {
+  display: block;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  background: white;
+  border: none;
+  box-shadow: 0px 4px 4px 0 rgba(0, 0, 0, 0.2);
+  font-family: var(--body-font);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--pale);
+  padding: 1rem 5rem;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .btn {
+    font-size: 0.8rem;
+    padding: 0.5rem 1.5rem;
+  }
+}

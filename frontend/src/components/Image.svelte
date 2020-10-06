@@ -3,74 +3,77 @@
   export let image;
   export let alt = null;
   export let caption = null;
-  export let size = null;
-
-  // TO DO: FIX THIS so that it works on page changes
+  export let maxWidth = "1000px";
+  // The maxWidth prop lets you specify the
+  // maximum size of the image within your layout
+  // If the image container has a max-width of 400px
+  // then define sizes="(max-width: 400px) 100vw, 400px"
 
   const { alternativeText } = image;
 
-  // Simple images (.svg)
-  let src = `${api}${image.url}`;
-  let srcset = "";
-  console.log("src", src);
+  $: source = () => {
+    // Images with multiple sizes (.jpg)
+    if (image.formats) {
+      return `${api}${image.formats.large.url}`;
+    }
 
-  // Images with multiple sizes (.jpg)
-  if (image.formats) {
-    const { formats } = image;
-    src = size ? `${api}${formats[size].url}` : `${api}${formats.medium.url}`;
+    // Simple images (.svg)
+    return `${api}${image.url}`;
+  };
 
-    if (!size) {
-      srcset = Object.values(formats)
+  $: srcset = () => {
+    if (image.formats) {
+      const { formats } = image;
+
+      // Create srcset with the different image formats
+      const sourceSet = Object.values(formats)
+        .sort((a, b) => a.width - b.width)
         .map(({ url, width }) => {
           const src = `${api}${url} ${width}w`;
           return src;
         })
         .join(",");
+
+      return sourceSet;
     }
-  }
 
-  // ORGINAL;
-  // const { formats, alternativeText } = image;
+    // Simple images (.svg) without srcset
+    return "";
+  };
 
-  // const src = size
-  //   ? `${api}${formats[size].url}`
-  //   : `${api}${formats.medium.url}`;
-
-  // let srcset = "";
-  // if (!size) {
-  //   srcset = Object.values(formats)
-  //     .map(({ url, width }) => {
-  //       const src = `${api}${url} ${width}w`;
-  //       return src;
-  //     })
-  //     .join(",");
-  // }
+  $: sizes = `(max-width: ${maxWidth}) 100vw, ${maxWidth}`;
 </script>
 
 <style>
   figure {
-    display: block;
+    flex-grow: 1;
+    height: auto;
+    display: flex;
     max-width: 100%;
     max-height: 100%;
+    box-shadow: var(--box-shadow);
   }
 
   img {
+    flex-grow: 1;
     display: block;
     margin: 0 auto;
     width: 100%;
+    height: auto;
     max-width: 1000px;
     max-height: 100%;
     object-fit: cover;
+    object-position: center;
   }
 </style>
 
 {#if image}
   <figure>
     <img
-      {src}
+      src={source()}
       alt={alt ? alt : alternativeText}
-      {srcset}
-      size="(max-width: 1000px) 100vw, 1000px" />
+      srcset={srcset()}
+      {sizes} />
 
     {#if caption}
       <figcaption>{caption}</figcaption>

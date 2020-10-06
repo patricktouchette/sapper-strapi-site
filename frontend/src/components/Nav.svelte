@@ -1,5 +1,5 @@
 <script>
-  import MobileMenu from "./MobileMenu.svelte";
+  import NavMobileMenu from "./NavMobileMenu.svelte";
 
   export let segment = null;
   let showMenu = false;
@@ -98,4 +98,4 @@
   </ul>
 </nav>
 
-<MobileMenu {showMenu} {links} on:click={() => (showMenu = !showMenu)} />
+<NavMobileMenu {showMenu} {links} on:click={() => (showMenu = !showMenu)} />

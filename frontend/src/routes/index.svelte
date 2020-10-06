@@ -1,7 +1,26 @@
+<script context="module">
+  import api from "./_api.js";
+
+  export async function preload(page) {
+    const query = `/features`;
+    const res = await this.fetch(`${api}${query}`);
+    const data = await res.json();
+
+    if (data.length === 0) {
+      this.error("404", "No data found.");
+    }
+    if (res.status === 200) return { data };
+
+    this.error(res.status, data.message);
+  }
+</script>
+
 <script>
   import Section from "../components/Section.svelte";
   import Header from "../components/Header.svelte";
   import Features from "../components/Features.svelte";
+
+  export let data;
 </script>
 
 <svelte:head>
@@ -18,5 +37,5 @@
 </Section>
 
 <Section>
-  <Features />
+  <Features {data} />
 </Section>

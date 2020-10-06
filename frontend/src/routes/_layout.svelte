@@ -10,22 +10,13 @@
 <style>
 </style>
 
-{#if segment === undefined}
-  <!-- Home Page   -->
-  <main>
-    <slot />
-  </main>
-{:else}
-  <!-- Other Pages -->
-  <Section border noPadding>
-    <Nav {segment} />
-  </Section>
-  <main>
-    <Section>
-      <slot />
-    </Section>
-  </main>
-{/if}
+<Section border noPadding>
+  <Nav {segment} />
+</Section>
+
+<main>
+  <slot />
+</main>
 
 <CallToAction />
 <Section background="var(--dark)" color="white">

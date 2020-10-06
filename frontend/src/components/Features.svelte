@@ -1,5 +1,7 @@
 <script>
   import Feature from "./Feature.svelte";
+
+  export let data;
 </script>
 
 <style>
@@ -12,6 +14,14 @@
 </style>
 
 <div class="features">
+  {#each data as feature}
+    <Feature title={feature.title} image={feature.image.url} alt={feature.alt}>
+      {feature.description}
+    </Feature>
+  {/each}
+</div>
+
+<!-- <div class="features">
   <Feature
     title="Grow Together"
     image="./images/illustration-grow-together.svg"
@@ -37,4 +47,4 @@
     solution. This means, once signed in to your app, your users can start
     chatting immediately.
   </Feature>
-</div>
+</div> -->

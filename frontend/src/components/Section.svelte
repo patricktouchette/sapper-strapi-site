@@ -22,6 +22,8 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     box-shadow: 0 -0.4rem 0.9rem 0.2rem rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 10;
   }
 
   .noPadding {

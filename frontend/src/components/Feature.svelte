@@ -29,6 +29,7 @@
     .feature-block {
       grid-template-columns: 1fr;
       text-align: center;
+      padding: 1rem;
     }
 
     .feature-block-image {

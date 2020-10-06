@@ -8,45 +8,39 @@
     const res = await this.fetch(`${api}${query}`);
     const data = await res.json();
 
-    // if (data.length === 0) {
-    //   this.error("404", "No data found.");
-    //   return;
-    // }
-    // if (res.status === 200) return { page: data[0] };
-
-    // this.error(res.status, data.message);
-    // return;
-
-    if (res.status === 200) {
-      return { page: data[0] };
-    } else {
-      this.error(res.status, data.message);
+    if (data.length === 0) {
+      this.error("404", "No data found.");
     }
+    if (res.status === 200) return { page: data[0] };
+
+    this.error(res.status, data.message);
   }
 </script>
 
 <script>
+  import Section from "../components/Section.svelte";
   import RichText from "../components/RichText.svelte";
-  // import Image from "../components/Image.svelte";
+  import Image from "../components/Image.svelte";
   export let page;
-  console.log("page", page);
 </script>
 
 <style>
   .featured-image {
-    max-width: 400px;
+    display: flex;
+    max-width: 500px;
+    max-height: 500px;
     margin-bottom: 4rem;
   }
 </style>
 
-<!-- {#if page} -->
-<h1>{page.title}</h1>
+<Section>
+  <!-- {#if page} -->
+  <h1>{page.title}</h1>
 
-<div class="featured-image">
-  {page.image.url}
-  <!-- <Image image={page.image} /> -->
-  <img src={`${api}${page.image.url}`} alt="" />
-</div>
+  <div class="featured-image">
+    <Image image={page.image} maxWidth="500px" />
+  </div>
 
-<RichText content={page.content} />
-<!-- {/if} -->
+  <RichText content={page.content} />
+  <!-- {/if} -->
+</Section>

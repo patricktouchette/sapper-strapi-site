@@ -1,9 +1,6 @@
 <script context="module">
-  import api from "./_api.js";
-
   export async function preload(page) {
-    const query = `/features`;
-    const res = await this.fetch(`${api}${query}`);
+    const res = await this.fetch(`/api/features`);
     const data = await res.json();
 
     if (data.length === 0) {

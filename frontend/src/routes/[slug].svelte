@@ -1,11 +1,8 @@
 <script context="module">
-  import api from "./_api.js";
-
   export async function preload(page) {
     const { slug } = page.params;
 
-    const query = `/pages?slug=${slug}&published=true`;
-    const res = await this.fetch(`${api}${query}`);
+    const res = await this.fetch(`${slug}.json`);
     const data = await res.json();
 
     if (data.length === 0) {

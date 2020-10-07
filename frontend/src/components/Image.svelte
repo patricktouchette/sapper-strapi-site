@@ -14,7 +14,7 @@
   $: source = () => {
     // Images with multiple sizes (.jpg)
     if (image.formats) {
-      return `${api}${image.formats.large.url}`;
+      return `${api}${image.formats.medium.url}`;
     }
 
     // Simple images (.svg)

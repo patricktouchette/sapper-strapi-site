@@ -72,13 +72,16 @@
 <nav class="header-nav">
   <ul>
     <li class="logo">
-      <a href="."><img src="./images/logo.svg" alt="huddle logo" /></a>
+      <a rel="prefetch" href="."><img
+          src="./images/logo.svg"
+          alt="huddle logo" /></a>
     </li>
 
     {#each links as { name, url }}
       <li class="menu-item">
         <a
           href={url}
+          rel="prefetch"
           aria-current={segment === url ? 'page' : undefined}>{name}</a>
       </li>
     {/each}

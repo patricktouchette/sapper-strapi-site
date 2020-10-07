@@ -61,12 +61,14 @@
     <button class="btn btn-primary" on:click>X</button>
 
     <div class="logo" on:click>
-      <a href="/"><Logo /></a>
+      <a href="/" rel="prefetch"><Logo /></a>
     </div>
 
     <ul>
       {#each links as { name, url }}
-        <li class="menu-item"><a href={url} on:click>{name}</a></li>
+        <li class="menu-item">
+          <a href={url} on:click rel="prefetch">{name}</a>
+        </li>
         <hr />
       {/each}
     </ul>

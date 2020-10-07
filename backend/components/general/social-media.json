@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_general_social_medias",
+  "info": {
+    "name": "social-media",
+    "icon": "book-medical"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "enumeration",
+      "enum": [
+        "facebook",
+        "twitter",
+        "instagram",
+        "youtube"
+      ]
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

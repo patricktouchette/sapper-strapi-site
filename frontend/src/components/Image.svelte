@@ -51,7 +51,7 @@
     display: flex;
     max-width: 100%;
     max-height: 100%;
-    box-shadow: var(--box-shadow);
+    /* box-shadow: var(--box-shadow); */
   }
 
   img {

@@ -15,7 +15,7 @@
 
 <div class="features">
   {#each data as feature}
-    <Feature title={feature.title} image={feature.image.url} alt={feature.alt}>
+    <Feature title={feature.title} image={feature.image} alt={feature.alt}>
       {feature.description}
     </Feature>
   {/each}

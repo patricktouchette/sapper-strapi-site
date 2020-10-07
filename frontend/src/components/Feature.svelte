@@ -1,4 +1,5 @@
 <script>
+  import Image from "./Image.svelte";
   export let title;
   export let image;
   export let alt;
@@ -33,18 +34,16 @@
     }
 
     .feature-block-image {
-      max-width: 500px;
-      margin: 0 auto;
-    }
-
-    .feature-block-image {
       max-width: 400px;
+      margin: 0 auto;
     }
   }
 </style>
 
 <div class="feature-block">
-  <div class="feature-block-image"><img src={image} {alt} /></div>
+  <div class="feature-block-image">
+    <Image {image} {alt} maxWidth="400px" />
+  </div>
 
   <div class="feature-block-text">
     <h2>{title}</h2>

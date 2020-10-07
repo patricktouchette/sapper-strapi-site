@@ -78,7 +78,6 @@
     {#each links as { name, url }}
       <li class="menu-item">
         <a
-          rel="prefetch"
           href={url}
           aria-current={segment === url ? 'page' : undefined}>{name}</a>
       </li>

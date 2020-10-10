@@ -1,0 +1,12 @@
+{
+  "name": "sapper-strapi-site-helper",
+  "description": "Helper to start the strapi backend and sapper frontend",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "front": "cd frontend && npm run dev",
+    "back": "cd backend && npm run dev",
+    "export": "cd frontend && npm run export",
+    "serve": "cd frontend/__sapper__/export && python -m SimpleHTTPServer 8001"
+  }
+}

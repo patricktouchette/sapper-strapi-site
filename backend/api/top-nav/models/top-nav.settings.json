@@ -1,0 +1,34 @@
+{
+  "kind": "singleType",
+  "collectionName": "top_navs",
+  "info": {
+    "name": "top-nav"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "logo": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "menuItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.menu-item"
+    },
+    "menu": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.menu"
+    }
+  }
+}

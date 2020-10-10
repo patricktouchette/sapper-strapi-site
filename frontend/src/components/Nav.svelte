@@ -2,14 +2,15 @@
   import NavMobileMenu from "./NavMobileMenu.svelte";
 
   export let segment = null;
+  export let links = [];
   let showMenu = false;
 
-  const links = [
-    { name: "About", url: "about-us" },
-    { name: "FAQ", url: "faq" },
-    { name: "Career", url: "career" },
-    { name: "Contact Us", url: "contact-us" },
-  ];
+  // const links = [
+  //   { name: "About", url: "about-us" },
+  //   { name: "FAQ", url: "faq" },
+  //   { name: "Career", url: "career" },
+  //   { name: "Contact Us", url: "contact-us" },
+  // ];
 </script>
 
 <style>

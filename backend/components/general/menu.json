@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_general_menus",
+  "info": {
+    "name": "Menu",
+    "icon": "atlas"
+  },
+  "options": {},
+  "attributes": {
+    "MenuItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.menu-item"
+    },
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}

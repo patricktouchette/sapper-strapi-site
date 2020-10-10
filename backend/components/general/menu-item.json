@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_general_menu_items",
+  "info": {
+    "name": "MenuItem",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "page": {
+      "model": "page"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}
